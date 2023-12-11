@@ -15,6 +15,8 @@ It's worth checking the serialisation methods https://en.wikipedia.org/wiki/Comp
 
 Good read: https://medium.com/@hugovs/the-need-for-speed-experimenting-with-message-serialization-93d7562b16e4
 
+Benchmarks: https://github.com/endel/msgpack-benchmark
+
 ## requirements
 
 [Node v18.x](https://nodejs.org/en)
@@ -25,6 +27,8 @@ We use:
 * [mqtt](https://www.npmjs.com/package/mqtt) as MQTT client library
 * [@msgpack/msgpack](https://www.npmjs.com/package/@msgpack/msgpack) as payload serialisation library
 * [dotenv](https://www.npmjs.com/package/dotenv) to process `.env` files.
+
+Check [msgpackr](https://www.npmjs.com/package/msgpackr), it seems faster!
 
 ## components
 
