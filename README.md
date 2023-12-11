@@ -8,7 +8,12 @@ Sample MQTT server, MQTT worker and MQTT client to use MessagePack for better us
 
 [MessagePack](https://msgpack.org/) does not get the attention it deserves. IMHO, it is much better than [Protocol Buffers](https://protobuf.dev/).
 
+* Flexibility: you don't have to define a schema and generate code for it. It's like JSON!
+* Adaptability: when we have IoT environment with many devices and (possibly) with different firmware versions; you cannot force upgrade all of them, if you make changes in the data structures of messages. In server environment (where you have full control), you may consider more strict alignment using rigid protocols like gRPC, and you can upgrade all codebases.
+
 It's worth checking the serialisation methods https://en.wikipedia.org/wiki/Comparison_of_data-serialization_formats.
+
+Good read: https://medium.com/@hugovs/the-need-for-speed-experimenting-with-message-serialization-93d7562b16e4
 
 ## requirements
 
