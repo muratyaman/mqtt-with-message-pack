@@ -4,7 +4,7 @@ Demo MQTT server and client using MessagePack for payloads.
 
 Sample MQTT server, MQTT worker and MQTT client to use MessagePack for better usage of network bandwidth.
 
-[MQTT](https://en.wikipedia.org/wiki/MQTT) is good at collecting messages from weak devices on IoT. But since it is more like a Pub/Sub messaging system, when devices connect, disconnect constantly on unstable networks, some messages are lost. There is no message queue despite its name.
+[MQTT](https://en.wikipedia.org/wiki/MQTT) is the de facto protocol for [IoT](https://en.wikipedia.org/wiki/Internet_of_things) systems to exchange messages.
 
 [MessagePack](https://msgpack.org/) does not get the attention it deserves. IMHO, it is much better than [Protocol Buffers](https://protobuf.dev/).
 
@@ -18,7 +18,7 @@ We use:
 
 * [aedes](https://www.npmjs.com/package/aedes) as MQTT server library
 * [mqtt](https://www.npmjs.com/package/mqtt) as MQTT client library
-* [@msgpack/msgpack](https://www.npmjs.com/package/@msgpack/msgpack) as AMQP client library
+* [@msgpack/msgpack](https://www.npmjs.com/package/@msgpack/msgpack) as payload serialisation library
 * [dotenv](https://www.npmjs.com/package/dotenv) to process `.env` files.
 
 ## components
@@ -27,7 +27,7 @@ CLIENT subscribes to MQTT server topics like `to/<clientId>/text` etc.; publishe
 
 SERVER acts is a simple MQTT server.
 
-WORKER subscribes to topics `from/#` on MQTT server; publishes messages to AMQP queues `to/<clientId>/confirm`:
+WORKER subscribes to topics `from/#` on MQTT server; publishes messages to topics `to/<clientId>/confirm`:
 
 Sample payload using MessagePack:
 
